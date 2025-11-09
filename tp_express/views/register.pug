@@ -1,0 +1,10 @@
+extends layout
+block content
+  h1.text-2xl.font-bold.mb-4 Register
+  form(method="POST" action="/register" class="space-y-3")
+    input(type="email" name="email" placeholder="Email" required class="w-full border p-2 rounded")
+    input(type="password" name="password" placeholder="Password" required class="w-full border p-2 rounded")
+    button(type="submit" class="w-full bg-indigo-600 text-white p-2 rounded") Register
+  p.mt-2.text-sm.text-gray-600
+    | Already have an account?
+    a.text-indigo-600(href="/login") Login

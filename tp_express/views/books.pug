@@ -1,0 +1,21 @@
+extends layout
+block content
+  h1.text-2xl.font-bold.mb-4 Books
+  form(method="POST" action="/logout")
+    button(type="submit" class="bg-red-500 text-white px-3 py-1 rounded mb-4") Logout
+
+  form(method="POST" action="/books" class="space-y-3 mb-6")
+    input(type="text" name="title" placeholder="Title" required class="w-full border p-2 rounded")
+    input(type="text" name="author" placeholder="Author" required class="w-full border p-2 rounded")
+    input(type="number" name="pages" placeholder="Pages" required class="w-full border p-2 rounded")
+    input(type="number" name="pagesRead" placeholder="Pages read" class="w-full border p-2 rounded")
+    button(type="submit" class="bg-indigo-600 text-white p-2 rounded w-full") Add book
+
+  if books.length
+    each book in books
+      .bg-gray-50.p-3.rounded.shadow.mb-2
+        h2.font-semibold #{book.title}
+        p.text-gray-600 #{book.author}
+        p.text-sm #{book.pagesRead} / #{book.pages} pages
+  else
+    p.text-gray-500 No books added yet.
