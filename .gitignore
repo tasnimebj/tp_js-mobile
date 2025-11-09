@@ -1,0 +1,14 @@
+# node modules
+tp_express/node_modules
+tp2_ts/node_modules
+
+# dist / build
+**/dist
+**/build
+
+# env files
+*.env
+
+# IDE files
+.vscode
+.DS_Store
